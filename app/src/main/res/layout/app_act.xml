@@ -11,10 +11,17 @@
     android:padding="16dp">
 
     <Button
-      android:id="@+id/reload"
+      android:id="@+id/max_stale"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="reload"
+      android:text="max stale"
+      tools:ignore="HardcodedText" />
+
+    <Button
+      android:id="@+id/cache"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="cache"
       tools:ignore="HardcodedText" />
   </LinearLayout>
 </layout>
