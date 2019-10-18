@@ -47,7 +47,9 @@ class AppActivity : AppCompatActivity() {
       binding.maxStale.setOnClickListener {
         lifecycleScope.launch {
           val r = retrofit.get()
-          Log.d("hoge", r.raw().toString())
+          Log.d("priorResponse", r.raw().priorResponse.toString())
+          Log.d("cacheResponse", r.raw().cacheResponse.toString())
+          Log.d("networkResponse", r.raw().networkResponse.toString())
         }
       }
     }
@@ -76,7 +78,9 @@ class AppActivity : AppCompatActivity() {
       binding.cache.setOnClickListener {
         lifecycleScope.launch {
           val r = retrofit.get()
-          Log.d("hoge", r.raw().toString())
+          Log.d("priorResponse", r.raw().priorResponse.toString())
+          Log.d("cacheResponse", r.raw().cacheResponse.toString())
+          Log.d("networkResponse", r.raw().networkResponse.toString())
         }
       }
     }
