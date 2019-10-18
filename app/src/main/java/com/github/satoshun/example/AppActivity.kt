@@ -35,6 +35,7 @@ class AppActivity : AppCompatActivity() {
             )
           }
         })
+        .cache(Cache(cacheDir, (10 * 1024 * 1024).toLong()))
         .build()
 
       val retrofit: Api = Retrofit.Builder()
