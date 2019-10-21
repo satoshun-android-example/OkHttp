@@ -28,18 +28,6 @@ class BasicCacheFragment : Fragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     run {
       val okhttp = OkHttpClient.Builder()
-        .addNetworkInterceptor(object : Interceptor {
-          override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
-            val request = chain.request()
-            return chain.proceed(
-              request
-                .newBuilder()
-                .addHeader("Cache-Control", "max-stale=60")
-                .build()
-            )
-          }
-        })
-        .cache(Cache(requireActivity().cacheDir, (10 * 1024 * 1024).toLong()))
         .build()
 
       val retrofit: Api = Retrofit.Builder()
@@ -48,7 +36,7 @@ class BasicCacheFragment : Fragment() {
         .build()
         .create()
 
-      binding.maxStale.setOnClickListener {
+      binding.noCache.setOnClickListener {
         lifecycleScope.launch {
           val r = retrofit.get()
           Log.d("priorResponse", r.raw().priorResponse.toString())
