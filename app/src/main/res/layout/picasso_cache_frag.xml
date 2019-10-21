@@ -3,24 +3,18 @@
   xmlns:tools="http://schemas.android.com/tools">
 
   <LinearLayout
+    android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <Button
-      android:id="@+id/basic_cache"
+      android:id="@+id/no_cache"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="Basic Cache"
-      tools:ignore="HardcodedText" />
-
-    <Button
-      android:id="@+id/picasso_cache"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:text="Picasso Cache"
+      android:text="no cache"
       tools:ignore="HardcodedText" />
   </LinearLayout>
 </layout>

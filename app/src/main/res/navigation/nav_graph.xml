@@ -11,9 +11,17 @@
     <action
       android:id="@+id/nav_app_to_basic_cache"
       app:destination="@id/nav_basic_cache" />
+
+    <action
+      android:id="@+id/nav_app_to_picasso_cache"
+      app:destination="@id/nav_picasso_cache" />
   </fragment>
 
   <fragment
     android:id="@+id/nav_basic_cache"
     android:name="com.github.satoshun.example.basiccache.BasicCacheFragment" />
+
+  <fragment
+    android:id="@+id/nav_picasso_cache"
+    android:name="com.github.satoshun.example.picassocache.PicassoCacheFragment" />
 </navigation>

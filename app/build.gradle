@@ -58,6 +58,8 @@ dependencies {
 
   implementation GLIDE
 
+  implementation PICASSO
+
   implementation OKHTTP
   implementation RETROFIT
 

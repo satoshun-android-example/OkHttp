@@ -87,6 +87,7 @@ const val DAGGER_ANDROID_COMPILER = "com.google.dagger:dagger-android-processor:
 const val DAGGER_ANDROID_SUPPORT_RUNTIME = "com.google.dagger:dagger-android-support:$VDAGGER"
 
 const val GLIDE = "com.github.bumptech.glide:glide:4.9.0"
+const val PICASSO = "com.squareup.picasso:picasso:2.71828"
 
 const val JUNIT = "junit:junit:4.13-beta-1"
 const val TRUTH = "com.google.truth:truth:0.42"

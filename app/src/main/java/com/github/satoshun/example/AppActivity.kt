@@ -36,5 +36,11 @@ class AppFragment : Fragment() {
         AppFragmentDirections.navAppToBasicCache()
       )
     }
+
+    binding.picassoCache.setOnClickListener {
+      findNavController().navigate(
+        AppFragmentDirections.navAppToPicassoCache()
+      )
+    }
   }
 }
