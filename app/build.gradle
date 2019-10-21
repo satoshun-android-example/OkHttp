@@ -3,6 +3,7 @@ import static dependencies.DependenciesKt.*
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
   compileSdkVersion COMPILE_SDK
@@ -44,6 +45,9 @@ dependencies {
 
   implementation COROUTINE
   implementation UI_COROUTINE
+
+  implementation NAVIGATION
+  implementation NAVIGATION_UI
 
   implementation SWIPE_REFRESH_LAYOUT
 

@@ -8,6 +8,7 @@ buildscript {
   dependencies {
     classpath ANDROID_PLUGIN
     classpath KOTLIN_PLUGIN
+    classpath SAFEARGS_PLUGIN
     classpath VERSIONS_PLUGIN
   }
 }
