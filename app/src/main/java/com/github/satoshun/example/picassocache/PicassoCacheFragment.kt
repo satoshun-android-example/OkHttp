@@ -1,7 +1,8 @@
 package com.github.satoshun.example.picassocache
 
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,13 +12,11 @@ import com.github.satoshun.example.databinding.PicassoCacheFragBinding
 import com.squareup.picasso.LruCache
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.Dispatchers
+import com.squareup.picasso.Target
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import kotlin.system.measureTimeMillis
 
 class PicassoCacheFragment : Fragment() {
   private lateinit var binding: PicassoCacheFragBinding
@@ -42,14 +41,9 @@ class PicassoCacheFragment : Fragment() {
 
       binding.noCache.setOnClickListener {
         lifecycleScope.launch {
-          withContext(Dispatchers.IO) {
-            val time = measureTimeMillis {
-              val bitmap = picasso
-                .load("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
-                .get()
-            }
-            Log.d("no cache", time.toString())
-          }
+          picasso
+            .load("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+            .into(emptyTarget)
         }
       }
     }
@@ -70,16 +64,22 @@ class PicassoCacheFragment : Fragment() {
 
       binding.cache.setOnClickListener {
         lifecycleScope.launch {
-          withContext(Dispatchers.IO) {
-            val time = measureTimeMillis {
-              val bitmap = picasso
-                .load("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
-                .get()
-            }
-            Log.d("cache", time.toString())
-          }
+          picasso
+            .load("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png")
+            .into(emptyTarget)
         }
       }
     }
+  }
+}
+
+private val emptyTarget = object : Target {
+  override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
+  }
+
+  override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
+  }
+
+  override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
   }
 }
