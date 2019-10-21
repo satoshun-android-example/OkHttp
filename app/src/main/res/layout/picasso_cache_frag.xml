@@ -16,5 +16,13 @@
       android:layout_height="wrap_content"
       android:text="no cache"
       tools:ignore="HardcodedText" />
+
+    <Button
+      android:id="@+id/cache"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="cache"
+      tools:ignore="HardcodedText" />
   </LinearLayout>
 </layout>
