@@ -41,13 +41,22 @@ class AppActivity : AppCompatActivity() {
 //          println(call)
 //        }
 //      })
+
+//    gitHubApi.test3()
+//      .subscribe({}) {
+//        println(it)
+//      }
   }
 }
 
 class AppFragment : Fragment() {
   private lateinit var binding: AppFragBinding
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?
+  ): View? {
     binding = AppFragBinding.inflate(inflater, container, false)
     return binding.root
   }

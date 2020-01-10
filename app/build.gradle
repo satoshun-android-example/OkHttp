@@ -62,7 +62,9 @@ dependencies {
 
   implementation OKHTTP
   implementation OKHTTP_LOGGING
+
   implementation RETROFIT
+  implementation RETROFIT_RX2
 
   implementation GROUPIE
   implementation GROUPIE_DATABINDING

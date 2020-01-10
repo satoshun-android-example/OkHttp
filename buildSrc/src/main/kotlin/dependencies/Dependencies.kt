@@ -98,4 +98,6 @@ const val ESPRESSO = "androidx.test.espresso:espresso-core:3.1.1"
 
 const val OKHTTP = "com.squareup.okhttp3:okhttp:4.2.1"
 const val OKHTTP_LOGGING = "com.squareup.okhttp3:logging-interceptor:4.2.1"
-const val RETROFIT = "com.squareup.retrofit2:retrofit:2.6.2"
+
+const val RETROFIT = "com.squareup.retrofit2:retrofit:2.7.1"
+const val RETROFIT_RX2 = "com.squareup.retrofit2:adapter-rxjava2:2.7.1"

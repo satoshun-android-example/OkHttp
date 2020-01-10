@@ -7,6 +7,7 @@ import dagger.Component
 import dagger.Lazy
 import dagger.Module
 import dagger.Provides
+import io.reactivex.Single
 import okhttp3.Cache
 import okhttp3.Call
 import okhttp3.OkHttpClient
@@ -51,8 +52,6 @@ class AppModule {
     return Retrofit.Builder()
       .callFactory(object : Call.Factory {
         override fun newCall(request: Request): Call {
-          println("OKHttp------")
-          println(Looper.myLooper() == Looper.getMainLooper())
           return client.get().newCall(request)
         }
       })
@@ -68,4 +67,7 @@ interface GitHubApi {
 
   @GET("hoge")
   fun test2(): retrofit2.Call<Unit>
+
+  @GET("hoge")
+  fun test3(): Single<Unit>
 }
